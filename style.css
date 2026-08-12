@@ -1,0 +1,344 @@
+/* --- NYT GAMES FULL-WIDTH DESIGN SYSTEM --- */
+
+:root {
+  --nyt-black: #121212;
+  --nyt-gray-100: #f8f9fa;
+  --nyt-gray-200: #e2e8f0;
+  --nyt-gray-500: #64748b;
+  --nyt-gray-700: #334155;
+
+  /* NYT Game Colors */
+  --wordle-green: #6aaa64;
+  --connections-yellow: #f6c845;
+  --connections-purple: #b4a8d1;
+  --spelling-yellow: #f7da21;
+
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Libre Franklin", -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  color: var(--nyt-black);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header Navbar */
+.nyt-header {
+  width: 100%;
+  border-bottom: 1px solid var(--nyt-black);
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nyt-brand {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.nyt-section {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  background: var(--nyt-black);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.edition-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--nyt-gray-500);
+}
+
+.nyt-date {
+  font-size: 0.8rem;
+  color: var(--nyt-gray-500);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Hero Section mit Unsplash-Hintergrundbild (Wordle/Buchstaben-Optik) */
+.hero-section {
+  position: relative;
+  width: 100%;
+  padding: 60px 20px;
+  background: url("https://images.unsplash.com/photo-1632501641765-e568d28b0015?q=80&w=2000&auto=format&fit=crop")
+    center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.78); /* Dunkles Overlay für gute Lesbarkeit */
+  backdrop-filter: blur(3px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.badge-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pill-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #121212;
+}
+
+.pill-badge.wordle {
+  background-color: var(--wordle-green);
+  color: white;
+}
+.pill-badge.connections {
+  background-color: var(--connections-purple);
+}
+.pill-badge.mini {
+  background-color: var(--connections-yellow);
+}
+.pill-badge.spelling {
+  background-color: var(--spelling-yellow);
+}
+
+.main-title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.intro-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  max-width: 750px;
+}
+
+/* Standings Banner */
+.standings-banner {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.standing-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.standing-item .label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #cbd5e1;
+}
+
+.standing-item .name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.standing-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Full Width Main Layout */
+.full-width-container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Controls Bar */
+.controls-bar {
+  max-width: 1400px;
+  margin: 24px auto;
+  background: #ffffff;
+  border: 1px solid var(--nyt-gray-200);
+  border-radius: 8px;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-group label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--nyt-gray-700);
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border: 1.5px solid var(--nyt-gray-200);
+  border-radius: 6px;
+  outline: none;
+  width: 260px;
+}
+
+input[type="text"]:focus {
+  border-color: var(--nyt-black);
+}
+
+.btn {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-primary {
+  background: var(--nyt-black);
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--nyt-gray-700);
+}
+
+.btn-secondary {
+  background: var(--nyt-gray-100);
+  color: var(--nyt-black);
+  border-color: var(--nyt-gray-200);
+}
+.btn-secondary:hover {
+  background: var(--nyt-gray-200);
+}
+
+.btn-outline {
+  background: white;
+  color: var(--nyt-black);
+  border-color: var(--nyt-black);
+}
+.btn-outline:hover {
+  background: var(--nyt-gray-100);
+}
+
+/* Dashboard Container (Nimmt volle Breite ein) */
+.viz-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto 40px auto;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid var(--nyt-gray-200);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* Footer */
+.nyt-footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid var(--nyt-gray-200);
+  font-size: 0.85rem;
+  color: var(--nyt-gray-500);
+  background: #ffffff;
+}
+
+/* Responsive Handling */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  .header-center {
+    display: none;
+  }
+  .controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .input-wrapper {
+    flex-direction: column;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+  .standing-divider {
+    display: none;
+  }
+  .standings-banner {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
